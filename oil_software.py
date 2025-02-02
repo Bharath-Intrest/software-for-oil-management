@@ -1,5 +1,4 @@
 import threading as thread
-#import multiprocessing as mp
 import mysql.connector as ms 
 from tkinter import *
 from tkinter.ttk import Combobox,Treeview
@@ -8,8 +7,6 @@ from icecream import ic
 from tkcalendar import DateEntry
 
 db_cursor=''
-#queue=mp.Queue()
-#initial_retrival_dict={'Ground nut':{250:0,500:0,1000:0},'Coconut':{250:0,500:0,1000:0},'Sesame oil':{250:0,500:0,1000:0},'box':{250:0,500:0,1000:0},'bottle':{250:0,500:0,1000:0},'label':{250:0,500:0,1000:0}}
 initial_retrival_dict={}
 win=Tk()
 win.geometry("600x400")
@@ -53,7 +50,7 @@ total_materials_needed={} #dict to store total materials needed for the single w
 
 
 def  sql_connection():
-    m_connect1=ms.connect(host = "localhost",user = "root",password = "Intrest@py1",database = "project_oil")
+    m_connect1=ms.connect(host = "localhost",user = "root",password = "*****",database = "project_oil")
     global db_cursor,m_connect
     db_cursor=m_connect1.cursor()
     m_connect=m_connect1
